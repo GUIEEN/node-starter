@@ -1,0 +1,36 @@
+{
+  "name": "@guieen/node-starter",
+  "version": "0.1.2",
+  "description": "A simple command-line utility for starting TS/JS project 🌈",
+  "main": "./build/starter.js",
+  "scripts": {
+    "clear": "rimraf build",
+    "dev": "npm run clear && tsc -w",
+    "build": "tsc"
+  },
+  "author": "Seungyong Kwak <guieenoutis@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "node-starter": "./bin.js"
+  },
+  "repository": "GUIEEN/node-starter",
+  "preferGlobal": true,
+  "keywords": [
+    "starter",
+    "node-starter",
+    "starterkit",
+    "simple",
+    "express",
+    "backend",
+    "frontend"
+  ],
+  "dependencies": {
+    "@types/node": "^10.12.18",
+    "commander": "^2.19.0",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/rimraf": "^2.0.2"
+  }
+}
