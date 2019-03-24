@@ -17,6 +17,5 @@ switch (process.env.NODE_ENV) {
 
 export default {
   nodeEnv: process.env.NODE_ENV || 'development',
-  port: process.env.PORT || 3002,
-  baseURL: process.env.BASE_URL || 'http://localhost:3002'
+  port: process.env.PORT || 3002
 }
