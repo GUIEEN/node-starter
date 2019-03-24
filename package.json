@@ -1,11 +1,12 @@
 {
     "name": "@guieen/node-starter",
-    "version": "0.1.13",
+    "version": "0.1.14",
     "description": "A simple command-line utility for starting TS/JS project 🌈",
     "main": "./dist/starter.js",
     "types": "./dist/starter.d.ts",
     "scripts": {
-        "build": "tsc"
+        "build": "tsc",
+        "prepare": "npm run build"
     },
     "author": "Seungyong Kwak <guieenoutis@gmail.com>",
     "license": "MIT",
