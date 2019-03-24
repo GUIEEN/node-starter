@@ -1,2 +1,2 @@
-#!/usr/bin/env node
-require('./build/starter.js')
+#! /usr/bin/env node
+require("./dist/starter.js")

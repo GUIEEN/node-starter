@@ -1,36 +1,41 @@
 {
-  "name": "@guieen/node-starter",
-  "version": "0.1.12",
-  "description": "A simple command-line utility for starting TS/JS project 🌈",
-  "main": "./build/starter.js",
-  "scripts": {
-    "clear": "rimraf build",
-    "dev": "npm run clear && tsc -w",
-    "build": "tsc"
-  },
-  "author": "Seungyong Kwak <guieenoutis@gmail.com>",
-  "license": "MIT",
-  "bin": {
-    "node-starter": "./bin.js"
-  },
-  "repository": "GUIEEN/node-starter",
-  "preferGlobal": true,
-  "keywords": [
-    "starter",
-    "node-starter",
-    "starterkit",
-    "simple",
-    "express",
-    "backend",
-    "frontend"
-  ],
-  "dependencies": {
-    "@types/node": "^10.12.18",
-    "commander": "^2.19.0",
-    "rimraf": "^2.6.3",
-    "typescript": "^3.2.2"
-  },
-  "devDependencies": {
-    "@types/rimraf": "^2.0.2"
-  }
+    "name": "@guieen/node-starter",
+    "version": "0.1.12",
+    "description": "A simple command-line utility for starting TS/JS project 🌈",
+    "main": "./dist/starter.js",
+    "types": "./dist/starter.d.ts",
+    "scripts": {
+        "build": "tsc"
+    },
+    "author": "Seungyong Kwak <guieenoutis@gmail.com>",
+    "license": "MIT",
+    "bin": {
+        "node-starter": "./bin.js"
+    },
+    "repository": "GUIEEN/node-starter",
+    "preferGlobal": true,
+    "keywords": [
+        "starter",
+        "node-starter",
+        "starterkit",
+        "simple",
+        "express",
+        "backend",
+        "frontend"
+    ],
+    "dependencies": {
+        "colorlog-css": "^1.0.11",
+        "commander": "^2.19.0",
+        "fs-extra": "^7.0.1",
+        "rimraf": "^2.6.3"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^5.0.5",
+        "@types/node": "^11.11.6",
+        "@types/rimraf": "^2.0.2",
+        "tslint": "^5.14.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-config-standard": "^8.0.1",
+        "typescript": "^3.3.4000"
+    }
 }
