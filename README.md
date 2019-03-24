@@ -20,7 +20,7 @@ Happy coding ✨
 ## Install
 
 ```bash
-npm install node-starter -g
+npm install @guieen/node-starter -g
 ```
 
 ## Basic Usage
@@ -49,7 +49,7 @@ node-starter i my-app
 node-starter i my-app -t https://github.com/GUIEEN/node-starter
 ```
 
-- repository_url : You can set any git repository to use as a starter kit
+-   repository_url : You can set any git repository to use as a starter kit
 
 ## TediousTediousTediousTediousTediousTediousTedious... :|
 
@@ -61,13 +61,13 @@ node-starter i my-app -t https://github.com/GUIEEN/node-starter
 
 ## Update
 
-- Fix the issues with installing
+-   Fix the issues with installing
 
 ## Todo...
 
-- [ ] Select the lint configuration before installing and apply it after project is installed.
-- [ ] Make a page for this module and let ppl share their customized initial repositories :)
-- [ ] ...
+-   [ ] Select the lint configuration before installing and apply it after project is installed.
+-   [ ] Make a page for this module and let ppl share their customized initial repositories :)
+-   [ ] ...
 
 <div align="center">
 
