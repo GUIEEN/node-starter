@@ -25,7 +25,11 @@ function install(dirName: string, option: Command) {
         .pri(`\n  Creating a new Node project in`)
         .suc(`${installPath}`)
         .pri("\n\n   [1/2] 🦍  Cloning project...")
-        .log(option.targetRepo === undefined ? "Default sample" : option)
+        .log(
+            option.targetRepo === undefined
+                ? "Default sample"
+                : option.targetRepo
+        )
         .end()
 
     if (option.targetRepo !== undefined) {
