@@ -59,6 +59,10 @@ node-starter i my-app -t https://github.com/GUIEEN/node-starter
 
 </div>
 
+## Update
+
+- Fix the issues with installing
+
 ## Todo...
 
 - [ ] Select the lint configuration before installing and apply it after project is installed.
