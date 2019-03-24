@@ -33,7 +33,6 @@ function install(dirName: string, option: Command) {
         .end()
 
     if (option.targetRepo !== undefined) {
-        clg.warn(1)
         const targetRepo = option.targetRepo as string
         // Simple validation of inputted option.targetRepo string
         const isCorrectFormOfGitRepo = /^(https:\/\/|git@).*(.git)$/.test(
