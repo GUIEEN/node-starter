@@ -30,11 +30,11 @@
         "commander": "^2.19.0",
         "fs-extra": "^7.0.1",
         "rimraf": "^2.6.3",
+        "@types/node": "^11.11.6",
         "typescript": "^3.3.4000"
     },
     "devDependencies": {
         "@types/fs-extra": "^5.0.5",
-        "@types/node": "^11.11.6",
         "@types/rimraf": "^2.0.2",
         "tslint": "^5.14.0",
         "tslint-config-prettier": "^1.18.0",
