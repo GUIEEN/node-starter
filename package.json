@@ -6,7 +6,8 @@
     "types": "./dist/starter.d.ts",
     "scripts": {
         "build": "tsc",
-        "prepare": "npm run build"
+        "prepare": "npm run build",
+        "install": "npm run build"
     },
     "author": "Seungyong Kwak <guieenoutis@gmail.com>",
     "license": "MIT",
