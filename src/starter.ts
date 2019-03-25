@@ -99,7 +99,7 @@ function installNpmAndClosing(installPath: string) {
 }
 
 program
-    .version("0.0.1")
+    .version("0.1.22")
     .command("i [dir]")
     .option(
         "-t, --targetRepo <repository_url>",
