@@ -1,6 +1,6 @@
 {
     "name": "@guieen/node-starter",
-    "version": "0.1.21",
+    "version": "0.1.22",
     "description": "A simple command-line utility for starting TS/JS project 🌈",
     "main": "./dist/starter.js",
     "types": "./dist/starter.d.ts",
