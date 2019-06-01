@@ -1,6 +1,6 @@
 {
     "name": "@guieen/node-starter",
-    "version": "0.1.22",
+    "version": "0.1.27",
     "description": "A simple command-line utility for starting TS/JS project 🌈",
     "main": "./dist/starter.js",
     "types": "./dist/starter.d.ts",
@@ -34,10 +34,12 @@
         "colorlog-css": "^1.0.11",
         "commander": "^2.19.0",
         "fs-extra": "^7.0.1",
+        "mkdirp": "^0.5.1",
         "rimraf": "^2.6.3"
     },
     "devDependencies": {
         "@types/fs-extra": "^5.0.5",
+        "@types/mkdirp": "^0.5.2",
         "@types/node": "^11.11.6",
         "@types/rimraf": "^2.0.2",
         "prettier": "^1.16.4",
