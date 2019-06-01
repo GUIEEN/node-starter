@@ -11,11 +11,13 @@
 
 No more annoying tedious `npm install -D @types/~` for starting your new project.
 
-This module will let you start coding without configuration and installing packages. All you need to do is set your initial state of repository (or you can use my sample node server) and type the `node-starter` cli command.
+This module will let you start coding without configuration and installing packages. All you need to do is set your initial state of repository (or you can use my [sample node server](https://github.com/delSibal/node_starter_samples)) and type the `node-starter` cli command.
 
 By default, simple node-server will be created. You can also use your repository to set an initial state of node project.
 
 Happy coding ✨
+
+### Contribute your starter repositories ==> [node_starter_samples repository](https://github.com/delSibal/node_starter_samples)
 
 ## Install
 
@@ -65,8 +67,9 @@ node-starter i my-app -t https://github.com/GUIEEN/node-starter
 
 ## Todo...
 
--   [ ] Select the lint configuration before installing and apply it after project is installed.
--   [ ] Make a page for this module and let ppl share their customized initial repositories :)
+-   [x] Make a page for this module and let ppl share their customized initial repositories :)
+-   [ ] Show available starter samples in repositories with CLI
+-   [ ] Select the lint configuration before installing application and apply it after project is installed.
 -   [ ] ...
 
 <div align="center">
