@@ -1,5 +1,5 @@
-import fs from "fs-extra"
-import path from "path"
+import fs from 'fs-extra'
+import path from 'path'
 
 export const copyFileSync = (source: string, destDirPath: string) => {
     let targetFile = destDirPath
@@ -12,19 +12,15 @@ export const copyFileSync = (source: string, destDirPath: string) => {
 }
 
 const ignore = {
-    "src/copyFolder.ts": true,
-    "src/starter.ts": true,
-    ".git": true,
+    'src/copyFolder.ts': true,
+    'src/starter.ts': true,
+    '.git': true,
     node_modules: true,
-    build: true
+    build: true,
 }
 
-export const getFileList = (
-    targetPath: string,
-    list: string[] = [],
-    base: string = ""
-): string[] => {
-    let tmp = fs.readdirSync(targetPath).map(e => path.join("", e))
+export const getFileList = (targetPath: string, list: string[] = [], base: string = ''): string[] => {
+    let tmp = fs.readdirSync(targetPath).map(e => path.join('', e))
     for (let i = 0; i < tmp.length; i++) {
         let currentPath = tmp[i]
         if (ignore[currentPath]) {
@@ -36,11 +32,7 @@ export const getFileList = (
         if (fs.lstatSync(path.join(targetPath, currentPath)).isDirectory()) {
             tmp.splice(i, 1)
             const tmpLen = tmp.length
-            tmp = getFileList(
-                path.join(targetPath, currentPath),
-                tmp,
-                currentPath
-            )
+            tmp = getFileList(path.join(targetPath, currentPath), tmp, currentPath)
 
             i = tmp.length > tmpLen ? tmp.length - 1 : i - 1
         }
