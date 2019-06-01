@@ -1,6 +1,7 @@
 {
     "extends": ["tslint-config-standard", "tslint-config-prettier"],
     "rules": {
-        "indent": [true, "spaces", 4]
+        "indent": [true, "spaces", 4],
+        "semicolon": true
     }
 }
