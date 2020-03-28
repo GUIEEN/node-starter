@@ -26,7 +26,7 @@ function entry(dirName: string | null | undefined, option: Command) {
     }
 
     exec(
-        `curl -s https://github.com/delSibal/node_starter_samples/tree/master/server | grep 'class="js-navigation-open"'`,
+        `curl -s https://github.com/delSibal/node_starter_samples/tree/master/server | grep 'class="js-navigation-open'`,
         (err, stdout) => {
             if (err) return clg.danger(`❌ Failed to fetch from repository`);
 
