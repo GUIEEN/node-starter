@@ -39,13 +39,11 @@ function entry(dirName: string | null | undefined, option: Command) {
                 if (lastIdxOfEnd === -1) {
                     continue;
                 }
-                var value = strs[i].substring(strs[i].lastIndexOf(titleKeyStart) + titleKeyStart.length, lastIdxOfEnd);
+                const value = strs[i].substring(
+                    strs[i].lastIndexOf(titleKeyStart) + titleKeyStart.length,
+                    lastIdxOfEnd,
+                );
                 result.push(value);
-            }
-
-            if (result === null) {
-                clg.danger(`❌ Failed to fetch from repository`);
-                return;
             }
 
             clg.pri(`  🌀 Choose the number of sample repository you want to clone.`);
@@ -62,13 +60,13 @@ function entry(dirName: string | null | undefined, option: Command) {
             function askRepo() {
                 rl.question('-> ', function(idx) {
                     repoIdx = parseInt(idx, 10);
-                    if (isNaN(repoIdx) || repoIdx < 0 || repoIdx >= result!.length) {
+                    if (isNaN(repoIdx) || repoIdx < 0 || repoIdx >= result.length) {
                         clg.warn(`❌ Choose right number`);
                         askRepo();
                         return;
                     }
 
-                    clg.pri(` Started to install ${result![repoIdx]}`);
+                    clg.pri(` Started to install ${result[repoIdx]}`);
 
                     rl.close();
                 });
