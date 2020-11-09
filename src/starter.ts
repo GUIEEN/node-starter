@@ -30,7 +30,18 @@ function entry(dirName: string | null | undefined, option: Command) {
         (err, stdout) => {
             if (err) return clg.danger(`❌ Failed to fetch from repository`);
 
-            const result = stdout.match(/(?<=title=\").*(?=\"\sid)/gm);
+            const strs = stdout.split('\n');
+            const result: string[] = [];
+            for (let i = 0; i < strs.length; i++) {
+                const titleKeyStart = 'title="';
+                const titleKeyEnd = '" href="/delSibal/node_starter_samples/tree/master';
+                const lastIdxOfEnd = strs[i].lastIndexOf(titleKeyEnd);
+                if (lastIdxOfEnd === -1) {
+                    continue;
+                }
+                var value = strs[i].substring(strs[i].lastIndexOf(titleKeyStart) + titleKeyStart.length, lastIdxOfEnd);
+                result.push(value);
+            }
 
             if (result === null) {
                 clg.danger(`❌ Failed to fetch from repository`);
