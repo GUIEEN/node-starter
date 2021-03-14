@@ -43,11 +43,11 @@ function entry(dirName: string | null | undefined, option: Command) {
 
                 let tmp = cur[0];
                 let repoName = '';
-                const comparer = `" `
+                const comparer = `" `;
                 for(let j = cur.indexOf(titleKeyStart) + titleKeyStart.length ; j < cur.length ; j++) {
                     tmp += cur[j+1];
                     if (tmp.length > 2) {
-                        tmp = tmp.substring(1)
+                        tmp = tmp.substring(1);
                     }
                     if (tmp === comparer) {
                         break;
