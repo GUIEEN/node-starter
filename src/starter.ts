@@ -33,17 +33,28 @@ function entry(dirName: string | null | undefined, option: Command) {
             const strs = stdout.split('\n');
             const result: string[] = [];
             for (let i = 0; i < strs.length; i++) {
+                const cur = strs[i];
                 const titleKeyStart = 'title="';
                 const titleKeyEnd = '" href="/delSibal/node_starter_samples/tree/master';
-                const lastIdxOfEnd = strs[i].lastIndexOf(titleKeyEnd);
+                const lastIdxOfEnd = cur.lastIndexOf(titleKeyEnd);
                 if (lastIdxOfEnd === -1) {
                     continue;
                 }
-                const value = strs[i].substring(
-                    strs[i].lastIndexOf(titleKeyStart) + titleKeyStart.length,
-                    lastIdxOfEnd,
-                );
-                result.push(value);
+
+                let tmp = cur[0];
+                let repoName = '';
+                const comparer = `" `
+                for(let j = cur.indexOf(titleKeyStart) + titleKeyStart.length ; j < cur.length ; j++) {
+                    tmp += cur[j+1];
+                    if (tmp.length > 2) {
+                        tmp = tmp.substring(1)
+                    }
+                    if (tmp === comparer) {
+                        break;
+                    }
+                    repoName += cur[j];
+                }
+                result.push(repoName);
             }
 
             clg.pri(`  🌀 Choose the number of sample repository you want to clone.`);
@@ -169,18 +180,12 @@ function installNpmAndClosing(installPath: string) {
 }
 
 function fetchSample(repoURL: string, destPath: string, selectedRepoName: string) {
-    // console.log('fuckWindows : ', fuckWindows);
-    // console.log('repoURL : ', repoURL);
-    // console.log('destDirName : ', destDirName);
-    // console.log('fs.existsSync(destDirName) : ', fs.existsSync(destDirName));
-
     if (fs.existsSync(destPath) === false) {
         fs.mkdirSync(destPath);
     }
-
     execSync('git init', { cwd: `${destPath}` });
     execSync(`git remote add -f origin ${repoURL}`, { cwd: `${destPath}` });
-
+    
     // Only fetch `server/${selectedRepoName}` directory from repository
     execSync(`git config core.sparseCheckout true`, { cwd: `${destPath}` });
     if (fuckWindows) {
@@ -206,7 +211,6 @@ function fetchSample(repoURL: string, destPath: string, selectedRepoName: string
     } else {
         // Add `-p` to avoid error when dir exists
         // execSync(`mkdir -p ${destPath}`, { cwd: `${destPath}` });
-
         // Assume that existing files are copied safely. If not, this might need to delete ${destPath} folder before moving.
         execSync(`mv -n $(ls -A) ${destPath}`, {
             cwd: `${installedPath}`,
